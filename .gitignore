@@ -1,3 +1,8 @@
+# build artifacts
+dist/
+build/
+fetch_ticker.spec
+
 # ignore specific files
 2do
 2do.*
