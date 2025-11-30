@@ -36,7 +36,7 @@ def fetch_data():
     if mode_var.get() == "single":
         start = d1
         end = (d1 + dt.timedelta(days=1)).strftime("%Y-%m-%d")
-        data = yfinance_ticker.history(start=start, end=end)
+        data = yfinance_ticker.history(start=start, end=end, auto_adjust=False)
         if data.empty:
             messagebox.showerror("No Data", f"No data for {ticker} on {date1}. It might be a weekend or holiday")
             return
@@ -68,7 +68,7 @@ def fetch_data():
     
     start = d1
     end = d2 + dt.timedelta(days=1)
-    df = yfinance_ticker.history(start=start, end=end)
+    df = yfinance_ticker.history(start=start, end=end, auto_adjust=False)
     if df.empty:
         messagebox.showerror("No Data", f"No historical data in range {start} to {end}")
         return
